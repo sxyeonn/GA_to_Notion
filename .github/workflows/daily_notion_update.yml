@@ -29,6 +29,18 @@ jobs:
           name: "tistory.json" # 생성할 파일 이름
           json: ${{ secrets.GA_CREDENTIALS_FILE }}
 
+      - name: Create config.py file
+        run: |
+          cat > config.py << EOF
+          # 자동 생성된 config.py 파일
+          GA_CREDENTIALS_FILE = "tistory.json"
+          # 필요한 다른 시크릿 변수들도 추가할 수 있습니다
+          GA_PROPERTY_ID = "${{ secrets.GA_PROPERTY_ID }}"
+          NOTION_TOKEN = "${{ secrets.NOTION_TOKEN }}"
+          NOTION_PARENT_PAGE_ID = "${{ secrets.NOTION_PARENT_PAGE_ID }}"
+          EOF
+        shell: bash
+
       - name: Run Notion Update Script
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}

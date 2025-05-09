@@ -5,10 +5,13 @@ from config import GA_PROPERTY_ID, GA_CREDENTIALS_FILE, NOTION_TOKEN, NOTION_PAR
 from ga_client import GoogleAnalyticsClient
 from notion_client import NotionClient
 
+
 def main():
     """
     구글 애널리틱스 데이터를 노션 페이지에 보고하는 메인 함수
     """
+    
+    
     try:
         # 구글 애널리틱스 클라이언트 초기화
         ga_client = GoogleAnalyticsClient(
