@@ -23,11 +23,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Decode and write GA credentials file
-        run: |
-          echo \n "$GA_CREDENTIALS_FILE" | base64 --decode > tistory.json
-        env:
-          GA_CREDENTIALS_FILE: ${{ secrets.GA_CREDENTIALS_FILE }}
+      - name: Create JSON from secret
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "tistory.json" # 생성할 파일 이름
+          json: ${{ secrets.GA_CREDENTIALS_FILE }}
 
       - name: Run Notion Update Script
         env:
