@@ -2,7 +2,7 @@ name: Daily Notion Update
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # 매일 오전 8시 실행
+    - cron: '*/3 * * * *'  # 매 3분마다 실행
   workflow_dispatch:
 
 jobs:
