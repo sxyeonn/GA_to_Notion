@@ -35,7 +35,7 @@ class NotionClient:
         # 페이지 제목 설정
         date_obj = datetime.datetime.strptime(ga_data['date'], '%Y-%m-%d')
         formatted_date = date_obj.strftime('%Y년 %m월 %d일')
-        page_title = f"📊 Yeonny's BLOG {formatted_date} 리포트"
+        page_title = f"Yeonny's BLOG {formatted_date} 리포트"
         
         # 노션 페이지 콘텐츠 구성
         children = self._build_page_content(ga_data)

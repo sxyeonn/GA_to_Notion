@@ -2,7 +2,7 @@ name: Daily Notion Update
 
 on:
   schedule:
-    - cron: "0 8 * * *" # 매일 아침 8시에 실행
+    - cron: "0 0 * * *" # 매일 아침 9시에 실행 (GitHub Actions에서는 기본적으로 UTC(협정 세계시) 시간대를 사용, 한국은 UTC+9 시간대)
   workflow_dispatch:
 
 jobs:
